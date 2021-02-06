@@ -14,6 +14,19 @@
     background-color: var(--color-cerulean);
     font-weight: 600;
 
+    .container-narrow {
+      @include max-screen(510px) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @include max-screen(470px) {
+      &__links {
+        margin-top: 10px;
+      }
+    }
+
     &__links-item {
       display: inline-block;
 
@@ -60,5 +73,8 @@
   display: inline-block;
   img {
     display: block;
+  }
+  @include max-screen(500px) {
+    width: 55%;
   }
 }

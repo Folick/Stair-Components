@@ -1,23 +1,32 @@
 .manufacture {
   position: relative;
-  margin-bottom: 75px; 
-  &__content {
-    max-width: 1050px;
-    padding: 0 15px;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  margin-bottom: 75px;
+  min-height: 590px;
+  display: flex;
 
-    display: flex;
+  &__content {
+    position: relative;
+    z-index: 2;
     justify-content: space-between;
     align-items: center;
+    display: flex;
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include max-screen(1020px) {
+      padding: 50px 15px;
+      flex-direction: column;
+    }
   }
   &-bg {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
     &::before {
       content: "";
       position: absolute;
@@ -28,10 +37,12 @@
       right: 0;
       background-color: rgba($color: #009ddc, $alpha: 0.9);
     }
-    img {
-      object-fit: cover;
-      display: block;
+
+    &__image {
       height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 }
@@ -47,8 +58,10 @@
     overflow: hidden;
     img {
       display: block;
-      object-fit: cover;
-      height: 100%;
+    }
+    @include max-screen(570px) {
+      width: 250px;
+      height: 250px;
     }
   }
 
@@ -63,6 +76,10 @@
     line-height: 65px;
     color: currentColor;
     text-transform: uppercase;
+    @include max-screen(475px) {
+      font-size: 24px;
+      line-height: 1.5;
+    }
   }
 
   &__subtitle {
@@ -81,6 +98,11 @@
       background-color: var(--color-white);
     }
 
+    @include max-screen(580px) {
+      font-size: 15px;
+      line-height: 1.6;
+      padding-bottom: 20px;
+    }
     span {
       text-transform: uppercase;
     }
@@ -114,15 +136,23 @@
 .manufacture-list {
   display: flex;
   margin-bottom: 40px;
-
+  @include max-screen(580px) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 30px;
-
+    @include max-screen(580px) {
+      margin-left: 0;
+    }
     & + & {
       margin-left: 100px;
+      @include max-screen(580px) {
+        margin-left: 0;
+      }
     }
     svg {
       width: 65px;

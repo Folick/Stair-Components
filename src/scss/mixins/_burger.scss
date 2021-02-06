@@ -1,8 +1,9 @@
 @mixin burger {
-	width: var(--burger-width);
-	height: var(--burger-height);
 	position: relative;
 	color: #000;
+	z-index: 10;
+	width: var(--burger-width);
+	height: var(--burger-height);
 
 	&__line {
 		position: absolute;
@@ -38,18 +39,21 @@
 		.burger__line {
 			transform: scale(0);
 			transition: transform 0.3s ease-in-out;
+			background-color: var(--color-white);
 		}
 
 		&::before {
 			transform: rotate(45deg);
 			top: 50%;
 			transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+			background-color: var(--color-white);
 		}
 
 		&::after {
 			transform: rotate(-45deg);
 			top: 50%;
 			transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+			background-color: var(--color-white);
 		}
 	}
 }

@@ -12,6 +12,17 @@
       svg {
         width: 35px;
         height: 35px;
+        flex-shrink: 0;
+      }
+
+      @include max-screen(970px) {
+        margin: 0 20px;
+      }
+      @include max-screen(665px) {
+        margin: 10px;
+      }
+      @include max-screen(410px) {
+        margin: 10px 0;
       }
     }
     &-title {
@@ -21,6 +32,14 @@
       font-size: 16px;
       line-height: 22px;
       color: var(--color-cerulean);
+    }
+
+    @include max-screen(970px) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @include max-screen(665px) {
+      justify-content: flex-start;
     }
   }
 
@@ -49,6 +68,16 @@
     font-size: 14px;
     line-height: 21px;
     color: var(--color-blue);
+
+    @include max-screen(1110px) {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(2, minmax(250px, 290px));
+      grid-gap: 30px;
+    }
+    @include max-screen(660px) {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 290px));
+    }
   }
 
   &__descr {
@@ -89,9 +118,17 @@
 
 .footer-about {
   max-width: 400px;
+
+  @include max-screen(1110px) {
+    order: -2;
+  }
 }
 .footer-form {
   width: 255px;
+
+  @include max-screen(1110px) {
+    order: -1;
+  }
 }
 
 .banner {
@@ -102,14 +139,33 @@
   color: var(--color-white);
   background-color: var(--color-blue);
 
+  @include max-screen(645px) {
+    flex-wrap: wrap;
+  }
+
   &__title {
     display: inline-block;
     margin-right: 25px;
+    @include max-screen(470px) {
+      display: block;
+    }
   }
 
   &__list {
     display: flex;
     align-items: center;
+    @include max-screen(470px) {
+      flex-direction: column;
+      .banner__item {
+        padding-right: 0;
+      }
+      .banner__item:not(:first-child) {
+        padding: 0;
+        &::before {
+          content: none;
+        }
+      }
+    }
   }
 
   &__item {

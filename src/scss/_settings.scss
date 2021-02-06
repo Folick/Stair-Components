@@ -17,6 +17,21 @@ body {
   line-height: 24px;
   color: var(--color-dark);
   background-color: var(--color-white);
+
+  &.no-scroll {
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 7;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: rgba($color: #000, $alpha: 0.7);
+    }
+  }
 }
 
 img {
@@ -76,12 +91,21 @@ ul {
   }
 }
 
+.site-container {
+  position: relative;
+  overflow: hidden;
+}
+
 .burger {
-  --burger-width: 40px;
+  --burger-width: 30px;
   --burger-height: 20px;
   --burger-line-height: 2px;
-
   @include burger;
+  display: none;
+  outline: none;
+  @include max-screen(768px) {
+    display: block;
+  }
 }
 
 .main {
