@@ -1,0 +1,132 @@
+.manufacture {
+  position: relative;
+  margin-bottom: 75px;
+
+  &__content {
+    max-width: 1050px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-bg {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba($color: #009ddc, $alpha: 0.9);
+    }
+    img {
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+.manufacture-content {
+  &__image {
+    display: block;
+    width: 330px;
+    height: 330px;
+    background-color: var(--color-white);
+    border-radius: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+    img {
+      display: block;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    max-width: 638px;
+    color: var(--color-white);
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 65px;
+    color: currentColor;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    position: relative;
+    margin-bottom: 22px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 65px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100px;
+      height: 3px;
+      background-color: var(--color-white);
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0 18px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 40px;
+    color: var(--color-cerulean);
+    background-color: var(--color-white);
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-blue);
+    }
+  }
+}
+
+.manufacture-list {
+  display: flex;
+  margin-bottom: 40px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+
+    & + & {
+      margin-left: 100px;
+    }
+    svg {
+      width: 65px;
+      height: 65px;
+    }
+  }
+}
