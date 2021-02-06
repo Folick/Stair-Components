@@ -37,17 +37,17 @@ const svgSprites = () => {
         }
       },
     }))
-    .pipe(dest('./app/images'));
+    .pipe(dest('./docs/images'));
 }
 
 const resources = () => {
   return src('./src/resources/**')
-    .pipe(dest('./app'))
+    .pipe(dest('./docs'))
 }
 
 const imgToApp = () => {
   return src(['./src/images/**.jpg', './src/images/**.png', './src/images/**.jpeg', './src/images/*.svg'])
-    .pipe(dest('./app/images'))
+    .pipe(dest('./docs/images'))
 }
 
 const htmlInclude = () => {
@@ -56,14 +56,14 @@ const htmlInclude = () => {
       prefix: '@',
       basepath: '@file'
     }))
-    .pipe(dest('./app'))
+    .pipe(dest('./docs'))
     .pipe(browserSync.stream());
 }
 
 const fonts = () => {
   return src('./src/fonts/**.ttf')
     .pipe(ttf2woff2())
-    .pipe(dest('./app/fonts/'));
+    .pipe(dest('./docs/fonts/'));
 }
 
 const checkWeight = (fontname) => {
@@ -111,7 +111,7 @@ const checkWeight = (fontname) => {
 const cb = () => {}
 
 let srcFonts = './src/scss/_fonts.scss';
-let appFonts = './app/fonts/';
+let appFonts = './docs/fonts/';
 
 const fontsStyle = (done) => {
   let file_content = fs.readFileSync(srcFonts);
@@ -152,7 +152,7 @@ const styles = () => {
     .pipe(cleanCSS({
       level: 2
     }))
-    .pipe(dest('./app/css/'))
+    .pipe(dest('./docs/css/'))
     .pipe(browserSync.stream());
 }
 
@@ -184,14 +184,14 @@ const scripts = () => {
     .pipe(sourcemaps.init())
     .pipe(uglify().on("error", notify.onError()))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('./app/js'))
+    .pipe(dest('./docs/js'))
     .pipe(browserSync.stream());
 }
 
 const watchFiles = () => {
   browserSync.init({
     server: {
-      baseDir: "./app",
+      baseDir: "./docs",
       notify: false
     },
   });
