@@ -48,9 +48,10 @@ ul {
 .container {
   margin: 0 auto;
   padding: 0 15px;
+  max-width: 1410;
 
   &-narrow {
-    max-width: 1270px;
+    max-width: 1240px;
   }
 }
 
