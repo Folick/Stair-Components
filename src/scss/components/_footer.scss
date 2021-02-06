@@ -146,8 +146,10 @@
   &__title {
     display: inline-block;
     margin-right: 25px;
+    text-transform: uppercase;
+    font-weight: 400;
     @include max-screen(470px) {
-      display: block;
+      margin: 0 10px 20px;
     }
   }
 
