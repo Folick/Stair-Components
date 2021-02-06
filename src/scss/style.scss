@@ -1,11 +1,14 @@
 @import "vars";
+@import "vendor";
 @import "mixins";
 @import "fonts";
 @import "settings";
+
 //
 @import "./components/header";
 @import "./components/menu";
 @import "./components/search";
+@import "./components/slide";
 //
 
 //
