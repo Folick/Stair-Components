@@ -57,6 +57,23 @@ ul {
 
 .title {
   position: relative;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 65px;
+  color: var(--color-blue);
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100px;
+    height: 3px;
+    background-color: var(--color-blue);
+    transform: translateX(-50%);
+  }
 }
 
 .burger {
