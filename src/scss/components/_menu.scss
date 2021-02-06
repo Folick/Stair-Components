@@ -19,7 +19,7 @@
       padding: 20px;
 
       background-color: var(--color-white);
-      transform: translateX(calc(-100% + 1px));
+      transform: translateX(-150%);
 
       box-shadow: 0 10px 10px rgba($color: #000, $alpha: 0.1);
       transition: all 0.25s ease-in-out;
