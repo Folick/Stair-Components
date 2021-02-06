@@ -236,7 +236,7 @@ const stylesBuild = () => {
     .pipe(cleanCSS({
       level: 2
     }))
-    .pipe(dest('./app/css/'))
+    .pipe(dest('./docs/css/'))
 }
 
 const scriptsBuild = () => {
@@ -266,7 +266,7 @@ const scriptsBuild = () => {
       this.emit('end');
     })
     .pipe(uglify().on("error", notify.onError()))
-    .pipe(dest('./app/js'))
+    .pipe(dest('./docs/js'))
 }
 
 const cache = () => {
