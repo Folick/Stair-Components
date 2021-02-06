@@ -1,0 +1,42 @@
+.menu {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: inline-block;
+    & + & {
+      margin-left: 25px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inherit;
+    color: var(--color-blue);
+    font-weight: 700;
+    line-height: 65px;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      opacity: 0;
+      background-color: var(--color-blue);
+      transition: all 0.25s ease-in-out;
+    }
+    &:focus,
+    &:active,
+    &:hover {
+      &::after {
+        width: 100%;
+        left: 0;
+        right: auto;
+        opacity: 1;
+      }
+    }
+  }
+}

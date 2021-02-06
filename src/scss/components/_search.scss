@@ -1,0 +1,15 @@
+.search {
+  position: relative;
+  margin-left: 35px;
+
+  &__btn {
+    display: block;
+    width: 19px;
+    height: 19px;
+    outline: none;
+    background: url("../images/sprite.svg#search") no-repeat center / contain;
+    &:focus {
+      transform: scale(1.05) rotate(-10deg);
+    }
+  }
+}
